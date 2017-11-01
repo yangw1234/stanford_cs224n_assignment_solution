@@ -273,7 +273,7 @@ class RNNModel(NERModel):
         ### YOUR CODE HERE (~4-6 lines)
         hidden_size = self.config.hidden_size
         n_classes = self.config.n_classes
-        U = tf.get_variable(name="U", shape=(hidden_size, n_classes), initializer=tf.glorot_uniform_initializer())
+        U = tf.get_variable(name="U", shape=(hidden_size, n_classes), initializer=tf.contrib.layers.xavier_initializer())
         b2 = tf.get_variable(name="b2", shape=(n_classes,), initializer=tf.zeros_initializer)
         h = tf.zeros((tf.shape(x)[0], hidden_size))
         ### END YOUR CODE

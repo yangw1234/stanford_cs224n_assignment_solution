@@ -66,19 +66,19 @@ class GRUCell(tf.nn.rnn_cell.RNNCell):
         with tf.variable_scope(scope):
             ### YOUR CODE HERE (~20-30 lines)
             U_z = tf.get_variable(name="U_z", shape=(self.input_size, self.state_size), dtype=tf.float32,
-                            initializer=tf.glorot_uniform_initializer())
+                            initializer=tf.contrib.layers.xavier_initializer())
             U_r = tf.get_variable(name="U_r", shape=(self.input_size, self.state_size), dtype=tf.float32,
-                            initializer=tf.glorot_uniform_initializer())
+                            initializer=tf.contrib.layers.xavier_initializer())
             U_o = tf.get_variable(name="U_o", shape=(self.input_size, self.state_size), dtype=tf.float32,
-                            initializer=tf.glorot_uniform_initializer())
+                            initializer=tf.contrib.layers.xavier_initializer())
 
 
             W_z = tf.get_variable(name="W_z", shape=(self.state_size, self.state_size), dtype=tf.float32,
-                            initializer=tf.glorot_uniform_initializer())
+                            initializer=tf.contrib.layers.xavier_initializer())
             W_r = tf.get_variable(name="W_r", shape=(self.state_size, self.state_size), dtype=tf.float32,
-                            initializer=tf.glorot_uniform_initializer())
+                            initializer=tf.contrib.layers.xavier_initializer())
             W_o = tf.get_variable(name="W_o", shape=(self.state_size, self.state_size), dtype=tf.float32,
-                            initializer=tf.glorot_uniform_initializer())
+                            initializer=tf.contrib.layers.xavier_initializer())
 
 
             b_z = tf.get_variable(name="b_z", shape=(self.state_size,), dtype=tf.float32,
